@@ -28,6 +28,9 @@ public sealed class UserMovementFixedSystem : FixedUpdateSystem
             var playerData = player.GetComponent<PlayerComponent>();
 
             var speed = playerData.speed;
+
+            if(player.Has<RunningComponent>()) speed *= playerData.staminaConfig.speedMultiplier;
+            
             var scaledMoveSpeed = speed * Time.deltaTime;
             var moveDirection = playerData.body.transform.TransformDirection(new Vector3(direction.x, 0, direction.y));
 
