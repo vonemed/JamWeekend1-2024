@@ -5,6 +5,7 @@ using Scellecs.Morpeh;
 using Cinemachine;
 using System;
 using Unity.VisualScripting;
+using Scellecs.Morpeh.Globals.Events;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -12,6 +13,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(UserInputInitSystem))]
 public sealed class UserInputInitSystem : UpdateSystem
 {
+    public GlobalEvent pauseEvent;
     private Filter filter;
     public override void OnAwake()
     {
@@ -58,6 +60,12 @@ public sealed class UserInputInitSystem : UpdateSystem
             else
             {
                 user.RemoveComponent<InteractingComponent>();
+            }
+
+            //* Read the interact input
+            if (inputActions.Player.Pause.triggered)
+            {
+                pauseEvent.Publish();
             }
         }
     }

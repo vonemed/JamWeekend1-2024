@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3bd112582b25647b7ec00f127b07ed, type: 3}
   m_Name: UserInputSystem
   m_EditorClassIdentifier: 
+  pauseEvent: {fileID: 11400000, guid: 1cfa4e742520ee04bbd53b3db2c8a81b, type: 2}
