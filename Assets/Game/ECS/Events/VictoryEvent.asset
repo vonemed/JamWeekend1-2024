@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24da1ebf522e73545be5e5a8a2694ceb, type: 3}
-  m_Name: GameConfig
+  m_Script: {fileID: 11500000, guid: 41711dd43a344c678c9e7a9dc7b358b1, type: 3}
+  m_Name: VictoryEvent
   m_EditorClassIdentifier: 
-  cozyGoal: 50
-  timer: 60
+  internalEntityID: -1

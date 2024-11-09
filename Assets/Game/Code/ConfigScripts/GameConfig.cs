@@ -4,4 +4,5 @@ using UnityEngine;
 public class GameConfig : ScriptableObject
 {
     public int cozyGoal;
+    public float timer;
 }
