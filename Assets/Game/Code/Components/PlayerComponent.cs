@@ -10,7 +10,9 @@ using Cinemachine;
 public struct PlayerComponent : IComponent {
     public StaminaConfig staminaConfig;
     public PlayerConfig playerConfig;
+    public GameConfig gameConfig;
     public float speed;
+    public int totalCoziness;
     public Rigidbody body;
     public Transform pickupPosition;
     public CinemachineVirtualCamera fpsCamera;

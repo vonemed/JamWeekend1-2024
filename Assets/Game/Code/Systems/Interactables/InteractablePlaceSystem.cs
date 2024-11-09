@@ -26,7 +26,7 @@ public sealed class InteractablePlaceSystem : UpdateSystem
             var interactable = player.GetComponent<PickedUpInteractableComponent>().interactable;
             var finalPosition = interactable.GetComponent<InteractableComponent>().finalPlace.position;
 
-            if(interactable.Has<InteractableFlyToPlaceComponent>()) return;
+            if (interactable.Has<InteractableFlyToPlaceComponent>()) return;
 
             if (GameTools.IsInRange(playerComponent.pickupPosition.position, finalPosition, 5f))
             {
@@ -35,7 +35,11 @@ public sealed class InteractablePlaceSystem : UpdateSystem
                 interactable.AddComponent<InteractableFlyToPlaceComponent>();
 
                 interactable.GetComponent<InteractableComponent>().body.transform.DOMove(interactable.GetComponent<InteractableComponent>().finalPlace.position,
-                0.5f).OnComplete(() => { interactable.AddComponent<InteractablePlacedComponent>();});
+                0.5f).OnComplete(() =>
+                {
+                    interactable.AddComponent<InteractablePlacedComponent>();
+                    player.GetComponent<PlayerComponent>().totalCoziness += interactable.GetComponent<InteractableComponent>().interactableData.cozyValue;
+                });
             }
         }
     }

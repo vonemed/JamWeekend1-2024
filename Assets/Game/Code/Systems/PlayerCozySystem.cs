@@ -6,8 +6,8 @@ using Scellecs.Morpeh;
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
 [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-[CreateAssetMenu(menuName = "ECS/Initializers/" + nameof(PlayerUISetupSystem))]
-public sealed class PlayerUISetupSystem : Initializer
+[CreateAssetMenu(menuName = "ECS/Systems/" + nameof(PlayerCozySystem))]
+public sealed class PlayerCozySystem : UpdateSystem
 {
     public Filter players;
     public Filter playerUI;
@@ -15,24 +15,16 @@ public sealed class PlayerUISetupSystem : Initializer
     {
         players = this.World.Filter.With<PlayerComponent>().With<StaminaComponent>().Build();
         playerUI = this.World.Filter.With<PlayerUIComponent>().Build();
-
-        foreach (var ui in playerUI)
-        {
-            var playerStamina = players.FirstOrDefault().GetComponent<StaminaComponent>();
-            var staminaSlider = ui.GetComponent<PlayerUIComponent>().staminaBar;
-            var cozySlider = ui.GetComponent<PlayerUIComponent>().cozyBar;
-
-            staminaSlider.maxValue = playerStamina.value;
-            staminaSlider.value = playerStamina.value;
-
-            cozySlider.maxValue = players.FirstOrDefault().GetComponent<PlayerComponent>().gameConfig.cozyGoal;
-        }
-
-        Cursor.visible = false;
     }
 
-    public override void Dispose()
+    public override void OnUpdate(float deltaTime)
     {
+        foreach (var ui in playerUI)
+        {
+            var playerComponent = players.FirstOrDefault().GetComponent<PlayerComponent>();
+            var cozySlider = ui.GetComponent<PlayerUIComponent>().cozyBar;
 
+            cozySlider.value = playerComponent.totalCoziness;
+        }
     }
 }

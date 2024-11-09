@@ -397,7 +397,7 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: e8bac7996d5290540835294a1dc691b9, type: 2}
   - enabled: 1
-    system: {fileID: 11400000, guid: 06c9f5de1e644dc4893c7126ac6877bd, type: 2}
+    system: {fileID: 11400000, guid: 5602b0ee8861db1459cd059f520c883a, type: 2}
   fixedUpdateSystems:
   - enabled: 1
     system: {fileID: 11400000, guid: e5ef32236bdc8b749b1b07213aca43e0, type: 2}
@@ -1294,6 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedData:
     staminaBar: {fileID: 1855935439}
+    cozyBar: {fileID: 1175277575}
 --- !u!1 &420040182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,7 +4324,9 @@ MonoBehaviour:
   serializedData:
     staminaConfig: {fileID: 11400000, guid: 88746f9cfc4c0e64f89de422bebc7db5, type: 2}
     playerConfig: {fileID: 11400000, guid: eb8f584710a0b7944b217a135824a79d, type: 2}
+    gameConfig: {fileID: 11400000, guid: fc8bd7742fb12ef468fbf0011051f817, type: 2}
     speed: 5
+    totalCoziness: 0
     body: {fileID: 1960779961237638650}
     pickupPosition: {fileID: 1896981104}
     fpsCamera: {fileID: 293487054}
