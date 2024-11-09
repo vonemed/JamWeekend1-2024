@@ -24,6 +24,8 @@ public sealed class PlayerUISetupSystem : Initializer
             staminaSlider.maxValue = playerStamina.value;
             staminaSlider.value = playerStamina.value;
         }
+
+        Cursor.visible = false;
     }
 
     public override void Dispose()

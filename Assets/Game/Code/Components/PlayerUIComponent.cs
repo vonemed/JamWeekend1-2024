@@ -9,4 +9,5 @@ using UnityEngine.UI;
 [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 public struct PlayerUIComponent : IComponent {
     public Slider staminaBar;
+    public Slider cozyBar;
 }

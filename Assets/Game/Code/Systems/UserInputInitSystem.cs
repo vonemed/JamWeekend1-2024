@@ -42,12 +42,22 @@ public sealed class UserInputInitSystem : UpdateSystem
             //* Read the running input
             if (inputActions.Player.Running.IsPressed())
             {
-                if(!user.Has<RunningComponent>()) user.AddComponent<RunningComponent>();
+                if (!user.Has<RunningComponent>()) user.AddComponent<RunningComponent>();
                 else user.SetComponent<RunningComponent>(user.GetComponent<RunningComponent>());
             }
             else
             {
                 user.RemoveComponent<RunningComponent>();
+            }
+
+            //* Read the interact input
+            if (inputActions.Player.Interact.IsPressed())
+            {
+                if (!user.Has<InteractingComponent>()) user.AddComponent<InteractingComponent>();
+            }
+            else
+            {
+                user.RemoveComponent<InteractingComponent>();
             }
         }
     }
