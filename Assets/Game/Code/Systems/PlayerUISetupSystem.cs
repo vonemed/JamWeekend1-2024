@@ -27,8 +27,6 @@ public sealed class PlayerUISetupSystem : Initializer
 
             cozySlider.maxValue = players.FirstOrDefault().GetComponent<PlayerComponent>().gameConfig.cozyGoal;
         }
-
-        Cursor.visible = false;
     }
 
     public override void Dispose()

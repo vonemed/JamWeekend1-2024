@@ -18,6 +18,8 @@ public sealed class PauseGameSystem : UpdateSystem {
     public override void OnUpdate(float deltaTime) {
         if(pauseEvent)
         {
+            Cursor.visible = true;
+
             foreach (var ui in pauseUI)
             {
                 ui.GetComponent<PauseGameUIComponent>().pauseGameUI.SetActive(true);
