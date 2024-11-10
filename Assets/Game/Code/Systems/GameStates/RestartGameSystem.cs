@@ -25,6 +25,8 @@ public sealed class RestartGameSystem : UpdateSystem
     {
         if (restartEvent)
         {
+            Cursor.visible = false;
+
             //* Restart timer
             timers = this.World.Filter.With<TimerComponent>().Build();
 

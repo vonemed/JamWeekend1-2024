@@ -22,6 +22,8 @@ public sealed class VictoryGameSystem : UpdateSystem {
 
         if(victoryEvent)
         {
+            Cursor.visible = true;
+            
             foreach (var ui in victoryUI)
             {
                 var uiComponent = ui.GetComponent<VictoryUIComponent>();
