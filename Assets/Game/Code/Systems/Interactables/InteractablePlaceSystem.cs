@@ -39,6 +39,7 @@ public sealed class InteractablePlaceSystem : UpdateSystem
                 {
                     interactable.AddComponent<InteractablePlacedComponent>();
                     player.GetComponent<PlayerComponent>().totalCoziness += interactable.GetComponent<InteractableComponent>().interactableData.cozyValue;
+                    player.RemoveComponent<PickedUpInteractableComponent>();
                 });
             }
         }

@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e688567d3d039094c809d82b1a240e90, type: 3}
-  m_Name: InteractablesConfig
+  m_Script: {fileID: 11500000, guid: 9e181ce97a390804295a562b1adce4a1, type: 3}
+  m_Name: New Restart Game System
   m_EditorClassIdentifier: 
-  interactableFlySpeed: 0.2
-  interactablePickupRange: 1
+  restartEvent: {fileID: 11400000, guid: 79e9659aea0709f4d96dd004c5507988, type: 2}

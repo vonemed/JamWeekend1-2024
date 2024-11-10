@@ -2,6 +2,7 @@ using Scellecs.Morpeh.Systems;
 using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh;
+using DG.Tweening;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -27,8 +28,14 @@ public sealed class InteractableFlySystem : UpdateSystem
                 var interactableComponent = interactable.GetComponent<InteractableComponent>();
                 var interactablePosition = interactableComponent.collider.transform.position;
 
-                if (GameTools.IsInRange(interactablePosition, playerPosition, interactableComponent.interactablesConfig.interactablePickupRange))
+                if (interactable.Has<BusyComponent>()) return;
+
+                interactable.AddComponent<BusyComponent>();
+
+                interactable.GetComponent<InteractableComponent>().body.transform.DOMove(playerPosition,
+                interactableComponent.interactablesConfig.interactableFlySpeed).OnComplete(() =>
                 {
+                    interactable.RemoveComponent<BusyComponent>();
                     interactable.AddComponent<InteractablePickedUpComponent>();
                     interactableComponent.collider.transform.SetParent(player.GetComponent<PlayerComponent>().pickupPosition);
                     interactable.RemoveComponent<InteractingComponent>();
@@ -37,14 +44,13 @@ public sealed class InteractableFlySystem : UpdateSystem
                     interactable.GetComponent<InteractableComponent>().body.useGravity = false;
                     interactable.GetComponent<InteractableComponent>().body.constraints = RigidbodyConstraints.FreezeAll;
 
-                    if(!player.Has<PickedUpInteractableComponent>()) player.AddComponent<PickedUpInteractableComponent>().interactable = interactable;
-                    else player.SetComponent<PickedUpInteractableComponent>(new PickedUpInteractableComponent() { interactable = interactable});
-                }
+                    if (!player.Has<PickedUpInteractableComponent>()) player.AddComponent<PickedUpInteractableComponent>().interactable = interactable;
+                    else player.SetComponent<PickedUpInteractableComponent>(new PickedUpInteractableComponent() { interactable = interactable });
+                });
+                // var direction = playerPosition - interactablePosition;
 
-                var direction = playerPosition - interactablePosition;
-
-                interactableComponent.collider.transform.Translate(direction * 
-                interactableComponent.interactablesConfig.interactableFlySpeed * Time.deltaTime);
+                // interactableComponent.collider.transform.Translate(direction *
+                // interactableComponent.interactablesConfig.interactableFlySpeed * Time.deltaTime);
             }
         }
     }

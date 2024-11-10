@@ -514,6 +514,8 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: 42be63a2a42661347a2004ea12a6922f, type: 2}
   - enabled: 1
+    system: {fileID: 11400000, guid: 900f0e3a552e79040a91b186a7803af7, type: 2}
+  - enabled: 1
     system: {fileID: 11400000, guid: 4e31c2956a6e0df469fb817d62ed0409, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 9294c93c14023054386a65cd283d8aab, type: 2}
@@ -2441,11 +2443,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2b88821693918c843841c496108fdac1, type: 2}
-        m_TargetAssemblyTypeName: Scellecs.Morpeh.Globals.BaseGlobalEvent`1[[System.Boolean,
-          mscorlib
+      - m_Target: {fileID: 11400000, guid: 79e9659aea0709f4d96dd004c5507988, type: 2}
+        m_TargetAssemblyTypeName: Scellecs.Morpeh.Globals.Events.GlobalEvent, Scellecs.Morpeh.Globals
         m_MethodName: Publish
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2453,6 +2454,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 932d4db3672f64b46a620a922ed6bde4, type: 2}
+        m_TargetAssemblyTypeName: Scellecs.Morpeh.Globals.Events.GlobalEvent, Scellecs.Morpeh.Globals
+        m_MethodName: Publish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1096361654}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -7538,7 +7551,7 @@ Transform:
   m_GameObject: {fileID: 1896981103}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008, y: 0.47099996, z: 0.896}
+  m_LocalPosition: {x: -0.008, y: 0.164, z: 1.402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -28,6 +28,11 @@ public sealed class VictoryGameSystem : UpdateSystem {
 
                 uiComponent.canvas.enabled = true;
 
+                foreach (var cozyItem in uiComponent.cozyItems)
+                {
+                    cozyItem.gameObject.SetActive(false);
+                }
+
                 var i = 0;
                 var totalCoziness = 0;
 
