@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e688567d3d039094c809d82b1a240e90, type: 3}
   m_Name: InteractablesConfig
   m_EditorClassIdentifier: 
-  interactableFlySpeed: 0.2
+  interactableFlySpeed: 0.1
   interactablePickupRange: 1

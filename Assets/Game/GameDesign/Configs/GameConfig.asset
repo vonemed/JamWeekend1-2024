@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   cozyGoal: 50
-  timer: 10
+  timer: 60

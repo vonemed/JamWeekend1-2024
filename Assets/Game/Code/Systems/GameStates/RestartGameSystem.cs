@@ -3,6 +3,7 @@ using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh.Globals.Events;
 using Scellecs.Morpeh;
+using Ami.BroAudio;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -13,12 +14,14 @@ public sealed class RestartGameSystem : UpdateSystem
     private Filter timers;
     private Filter players;
     private Filter interactables;
+    public Filter playlist;
 
     public GlobalEvent restartEvent;
     public override void OnAwake()
     {
         players = this.World.Filter.With<PlayerComponent>().With<StartPositionComponent>().Build();
         interactables = this.World.Filter.With<InteractableComponent>().With<StartPositionComponent>().Build();
+        playlist = this.World.Filter.With<MusicComponent>().Build();
     }
 
     public override void OnUpdate(float deltaTime)
@@ -65,6 +68,11 @@ public sealed class RestartGameSystem : UpdateSystem
                 interactable.GetComponent<InteractableComponent>().body.useGravity = true;
                 interactable.GetComponent<InteractableComponent>().body.constraints = RigidbodyConstraints.None;
             }
+
+            //* Music reset
+            var musicComponent = playlist.FirstOrDefault().GetComponent<MusicComponent>();
+
+            BroAudio.Play(musicComponent.musicConfig.gameMusic).AsBGM();
         }
     }
 }

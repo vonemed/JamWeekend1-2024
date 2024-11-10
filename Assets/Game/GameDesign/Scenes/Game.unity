@@ -547,6 +547,10 @@ MonoBehaviour:
     system: {fileID: 11400000, guid: 3a3bf2a8cf5528a4f92db66a43f384f5, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 9150fffad93116941a27fe237e73613e, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: c98c97f83ad8b7d42a5cab5f67851c19, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: 67bb0ea988c01a24b8f868a593649f38, type: 2}
   fixedUpdateSystems:
   - enabled: 1
     system: {fileID: 11400000, guid: e5ef32236bdc8b749b1b07213aca43e0, type: 2}
@@ -1433,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 481.05002
+      value: 481.05005
       objectReference: {fileID: 0}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
@@ -2946,7 +2950,7 @@ PrefabInstance:
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 481.05002
+      value: 481.05005
       objectReference: {fileID: 0}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
@@ -4475,7 +4479,7 @@ PrefabInstance:
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 481.05002
+      value: 481.05005
       objectReference: {fileID: 0}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
@@ -5834,7 +5838,7 @@ PrefabInstance:
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 481.05002
+      value: 481.05005
       objectReference: {fileID: 0}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
@@ -6543,18 +6547,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 79e9659aea0709f4d96dd004c5507988, type: 2}
-        m_TargetAssemblyTypeName: Scellecs.Morpeh.Globals.Events.GlobalEvent, Scellecs.Morpeh.Globals
-        m_MethodName: Publish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 8ff79ace3291e1645b58517a636bc7fe, type: 2}
         m_TargetAssemblyTypeName: Scellecs.Morpeh.Globals.Events.GlobalEvent, Scellecs.Morpeh.Globals
         m_MethodName: Publish
@@ -6911,7 +6903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0.316}
   m_AnchorMax: {x: 0.7015625, y: 0.39465013}
-  m_AnchoredPosition: {x: 1.999939, y: -15.999992}
+  m_AnchoredPosition: {x: 1.999939, y: -16}
   m_SizeDelta: {x: -0.0020142, y: 50.781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1749677184
@@ -7011,6 +7003,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749677182}
   m_CullTransparentMesh: 1
+--- !u!1 &1762555662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762555663}
+  - component: {fileID: 1762555664}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762555663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762555662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762555664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762555662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e32316acab18f48830ba573a1b405e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedData:
+    musicConfig: {fileID: 11400000, guid: cb2950153fccc7c4ea2d3646d45e8713, type: 2}
 --- !u!1001 &1802699588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7551,7 +7589,7 @@ Transform:
   m_GameObject: {fileID: 1896981103}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008, y: 0.164, z: 1.402}
+  m_LocalPosition: {x: -0.001, y: -0.022, z: 1.733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8184,7 +8222,7 @@ PrefabInstance:
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 481.05002
+      value: 481.05005
       objectReference: {fileID: 0}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
@@ -8884,6 +8922,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167450807}
     m_Modifications:
+    - target: {fileID: 600435639157801596, guid: 27da80b79f763fe4abc9428f4bcdd76f,
+        type: 3}
+      propertyPath: soundID.ID
+      value: 805306368
+      objectReference: {fileID: 0}
+    - target: {fileID: 600435639157801596, guid: 27da80b79f763fe4abc9428f4bcdd76f,
+        type: 3}
+      propertyPath: soundID._sourceAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ae8d9cb032bc1c40a8f7d4bd78c9337,
+        type: 2}
     - target: {fileID: 1495451787093235623, guid: 27da80b79f763fe4abc9428f4bcdd76f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9181,6 +9230,7 @@ MonoBehaviour:
     staminaConfig: {fileID: 11400000, guid: 88746f9cfc4c0e64f89de422bebc7db5, type: 2}
     playerConfig: {fileID: 11400000, guid: eb8f584710a0b7944b217a135824a79d, type: 2}
     gameConfig: {fileID: 11400000, guid: fc8bd7742fb12ef468fbf0011051f817, type: 2}
+    soundConfig: {fileID: 11400000, guid: 10bb738d3016ccb49993bba74b17736c, type: 2}
     speed: 5
     totalCoziness: 0
     body: {fileID: 1960779961237638650}
@@ -9212,3 +9262,4 @@ SceneRoots:
   - {fileID: 62440969}
   - {fileID: 783704905}
   - {fileID: 1947327822}
+  - {fileID: 1762555663}

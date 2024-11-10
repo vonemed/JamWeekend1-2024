@@ -18,7 +18,7 @@ public sealed class ApplicationPlaySystem : UpdateSystem
     {
         if (playGame)
         {
-            
+            Cursor.visible = false;
         }
     }
 }

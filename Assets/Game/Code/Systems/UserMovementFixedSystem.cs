@@ -2,6 +2,7 @@ using Scellecs.Morpeh.Systems;
 using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh;
+using Ami.BroAudio;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -22,7 +23,11 @@ public sealed class UserMovementFixedSystem : FixedUpdateSystem
         foreach (var player in players)
         {
             var direction = directions.FirstOrDefault().GetComponent<MoveDirectionComponent>().direction;
-            if (direction.sqrMagnitude == 0) return;
+            if (direction.sqrMagnitude == 0) 
+            {
+                player.RemoveComponent<WalkingComponent>();
+                return;
+            }
             //look todo: probably move to another system
 
             var playerData = player.GetComponent<PlayerComponent>();
@@ -36,6 +41,8 @@ public sealed class UserMovementFixedSystem : FixedUpdateSystem
             var moveDirection = playerData.body.transform.TransformDirection(new Vector3(direction.x, 0, direction.y));
 
             playerData.body.MovePosition(playerData.body.transform.position + moveDirection * scaledMoveSpeed);
+
+            if(!player.Has<WalkingComponent>()) player.AddComponent<WalkingComponent>();
         }
     }
 }

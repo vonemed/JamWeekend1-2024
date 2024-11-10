@@ -11,6 +11,7 @@ public struct PlayerComponent : IComponent {
     public StaminaConfig staminaConfig;
     public PlayerConfig playerConfig;
     public GameConfig gameConfig;
+    public SoundConfig soundConfig;
     public float speed;
     public int totalCoziness;
     public Rigidbody body;

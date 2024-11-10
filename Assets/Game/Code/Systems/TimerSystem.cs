@@ -28,7 +28,8 @@ public sealed class TimerSystem : UpdateSystem
         {
             var stateComponent = state.GetComponent<GameStateComponent>();
 
-            if (stateComponent.state == GameStateComponent.States.Pause) return;
+            if (stateComponent.state == GameStateComponent.States.Pause
+            || stateComponent.state == GameStateComponent.States.MainMenu) return;
 
             foreach (var timer in timers)
             {

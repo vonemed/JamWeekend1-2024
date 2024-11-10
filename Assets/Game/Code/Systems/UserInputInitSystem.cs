@@ -38,7 +38,7 @@ public sealed class UserInputInitSystem : UpdateSystem
             var stateComponent = state.GetComponent<GameStateComponent>();
 
             if (stateComponent.state == GameStateComponent.States.Pause) return;
-            
+
             foreach (var user in filter)
             {
                 var inputActions = user.GetComponent<UserComponent>().inputActions;
@@ -73,6 +73,8 @@ public sealed class UserInputInitSystem : UpdateSystem
                 //* Read the interact input
                 if (inputActions.Player.Pause.triggered)
                 {
+                    if (stateComponent.state == GameStateComponent.States.MainMenu) return;
+
                     pauseEvent.Publish();
                 }
             }
