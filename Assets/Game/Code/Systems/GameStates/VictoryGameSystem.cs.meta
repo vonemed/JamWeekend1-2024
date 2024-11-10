@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: f30f830d5aecd4140a2793d98347fc98
+guid: 34e585c24fbec91438cd1ec8e2ac0fa4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - victoryEvent: {fileID: 11400000, guid: 4bfd4e85afd7a5541b37df2a10248e3e, type: 2}
-  - gameStarted: {fileID: 11400000, guid: 0dcc7a981b0415b4f92107aea6ab3a1c, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {fileID: 2800000, guid: 493eb45005e8adb45b6b2cb31be411e9, type: 3}
   userData: 

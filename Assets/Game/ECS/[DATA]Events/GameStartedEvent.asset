@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1123d70dd9b8d8c4f8fc64ca042a1597, type: 3}
-  m_Name: New Application Play System
+  m_Script: {fileID: 11500000, guid: 41711dd43a344c678c9e7a9dc7b358b1, type: 3}
+  m_Name: GameStartedEvent
   m_EditorClassIdentifier: 
-  playGame: {fileID: 11400000, guid: cbcdc802b6b73b14ba0183c856a3a83b, type: 2}
+  internalEntityID: -1

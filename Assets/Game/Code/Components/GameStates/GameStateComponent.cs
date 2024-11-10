@@ -1,14 +1,18 @@
 using Scellecs.Morpeh;
 using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
-using TMPro;
 
 [System.Serializable]
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
 [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-public struct TimerComponent : IComponent {
-    public TMP_Text timer;
-    public GameConfig gameConfig;
-    public float currentTime;
+public struct GameStateComponent : IComponent {
+    public States state;
+
+    public enum States
+    {
+        MainMenu,
+        Playing,
+        Pause
+    }
 }
